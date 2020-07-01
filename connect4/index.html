@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+
+<script type="text/javascript">
+    let socket = new WebSocket("ws://10.0.0.4:8080");
+
+    socket.onopen = e => {
+        socket.send("ping");
+    }
+
+    socket.onmessage = e => {
+        document.getElementById("server-messages").innerHTML += "<li>" + JSON.stringify(e.data) + "</li>";
+    }
+</script>
+
+<head>
+    <title>Strategy Game</title>
+</head>
+
+<body>
+    <h2>Welcome to the strategy game!</h2>
+    <h1>Server messages:</h1>
+    <ul id="server-messages">
+    </ul>
+</body>
+
+</html>
