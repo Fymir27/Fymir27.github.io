@@ -3,7 +3,7 @@
 <html>
 
 <script type="text/javascript">
-    let socket = new WebSocket("ws://178.190.234.149:8080");
+    let socket = new WebSocket("wss://178.190.234.149:8080");
 
     socket.onopen = e => {
         socket.send("ping");
